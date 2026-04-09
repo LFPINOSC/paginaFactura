@@ -1,0 +1,78 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d47a1;
+    padding: 15px 30px;
+}
+
+/* LOGO */
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* LINKS */
+.menu_links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu_links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu_links li a:hover {
+    color: #90caf9;
+}
+
+/* BOTON HAMBURGUESA */
+.menu_toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu_toggle span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .menu_links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0d47a1;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .menu_links.active {
+        display: flex;
+    }
+
+    .menu_toggle {
+        display: flex;
+    }
+}

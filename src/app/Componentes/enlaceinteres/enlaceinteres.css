@@ -1,0 +1,64 @@
+/* Contenedor principal */
+.enlace-interes {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Título */
+.enlace-interes h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Lista */
+.enlace-interes ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Items */
+.enlace-interes li {
+    margin: 10px 0;
+}
+
+/* Links */
+.enlace-interes a {
+    display: block;
+    text-decoration: none;
+    background: #ffffff;
+    color: #0d47a1;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.enlace-interes a:hover {
+    background: #ffca28;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .enlace-interes {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .enlace-interes h2 {
+        font-size: 20px;
+    }
+
+    .enlace-interes a {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
