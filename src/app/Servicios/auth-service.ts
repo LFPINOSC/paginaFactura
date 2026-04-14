@@ -1,13 +1,15 @@
-import { inject, Inject, Injectable } from '@angular/core';
+import { inject, Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { environment } from '../../environment/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 
   private http = inject(HttpClient);
+  private platformId=inject(PLATFORM_ID);
 
   apiUrl= `${environment.apiUrl}/login`;
   private tohenKey='token';
@@ -20,7 +22,11 @@ export class AuthService {
     );
   }
   getToken(): string | null {
-    return localStorage.getItem(this.tohenKey);
+    if(isPlatformBrowser(this.platformId)){
+        return localStorage.getItem(this.tohenKey);
+    }
+    return null;
+    
   }
 
   logout(): void {

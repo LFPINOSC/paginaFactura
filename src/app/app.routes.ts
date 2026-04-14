@@ -5,12 +5,17 @@ import path from 'path';
 import { Acerca } from './paginaPublic/acerca/acerca';
 import { Contactanos } from './paginaPublic/contactanos/contactanos';
 import { PanelAdministrador } from './paginaPrivada/panel-administrador/panel-administrador';
+import { authGuard } from './Servicios/auth.guarda';
 
 export const routes: Routes = [
     {path:'', component: Inicio},
     {path:'login',component:Login},
     {path:'acerca', component:Acerca},
     {path:'contactanos', component:Contactanos},
-    {path:'admin', component: PanelAdministrador},
+    {
+        path:'admin',
+        component: PanelAdministrador,
+        canActivate:[authGuard]
+    },
     {path:'**', redirectTo:''}     
 ];
