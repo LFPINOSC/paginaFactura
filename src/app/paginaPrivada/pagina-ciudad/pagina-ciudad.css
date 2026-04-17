@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+.ciudad-contenedor {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-formulario,
+.card-tabla {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.card-formulario h2,
+.card-tabla h2 {
+  margin-bottom: 18px;
+  color: #1e293b;
+  font-size: 22px;
+}
+
+.grupo-formulario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.grupo-formulario label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.grupo-formulario input {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.grupo-formulario input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.botones-formulario {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-guardar,
+.btn-cancelar,
+.btn-editar,
+.btn-eliminar {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-guardar {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-guardar:hover {
+  background: #1d4ed8;
+}
+
+.btn-cancelar {
+  background: #94a3b8;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background: #64748b;
+}
+
+.btn-editar {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #d97706;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background: #dc2626;
+}
+
+.mensaje {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.exito {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.error-validacion {
+  margin-top: 6px;
+  color: #dc2626;
+  font-size: 12px;
+}
+
+.estado {
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+  color: #475569;
+}
+
+.tabla-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background: #f1f5f9;
+}
+
+table th,
+table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.acciones-columna {
+  width: 180px;
+}
+
+@media (max-width: 900px) {
+  .ciudad-contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ciudad-contenedor {
+    padding: 10px;
+  }
+
+  .card-formulario,
+  .card-tabla {
+    padding: 15px;
+  }
+
+  .card-formulario h2,
+  .card-tabla h2 {
+    font-size: 18px;
+  }
+
+  .botones-formulario {
+    flex-direction: column;
+  }
+
+  .btn-guardar,
+  .btn-cancelar,
+  .btn-editar,
+  .btn-eliminar {
+    width: 100%;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+}

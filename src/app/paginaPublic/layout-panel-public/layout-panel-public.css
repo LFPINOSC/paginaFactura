@@ -1,0 +1,18 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido {
+    width: 80%;
+    padding: 20px;
+}
+
+/* SIDEBAR (ENLACES) */
+.sidebar {
+    width: 20%;
+    background: #f5f5f5;
+    padding: 20px;
+    border-left: 2px solid #ddd;
+}

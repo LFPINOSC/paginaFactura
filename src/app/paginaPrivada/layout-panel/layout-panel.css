@@ -1,0 +1,166 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.admin_layout {
+    display: flex;
+    height: 100vh;
+    background: #f4f6f9;
+}
+
+/* SIDEBAR */
+.admin_shide {
+    width: 250px;
+    background: #1e293b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* LOGO */
+.logo_admin {
+    margin-bottom: 30px;
+}
+
+.logo_admin h1 {
+    font-size: 22px;
+}
+
+.logo_admin p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* MENÚ */
+.menu_admin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu_admin a {
+    text-decoration: none;
+    color: #cbd5f5;
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu_admin a:hover {
+    background: #334155;
+}
+
+.menu_admin a.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* CONTENIDO */
+.admin_main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.admin_header {
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin_header h1 {
+    font-size: 20px;
+}
+
+/* BOTÓN SALIR */
+.btn_salir {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn_salir:hover {
+    background: #dc2626;
+}
+
+/* CONTENIDO */
+.admin_contenido {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE (MÓVIL) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    .admin_layout {
+        flex-direction: column;
+    }
+
+    /* SIDEBAR COMO TOP MENU */
+    .admin_shide {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    .logo_admin {
+        margin-bottom: 0;
+    }
+
+    .logo_admin h1 {
+        font-size: 16px;
+    }
+
+    .logo_admin p {
+        display: none;
+    }
+
+    /* MENÚ EN HORIZONTAL */
+    .menu_admin {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .menu_admin a {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    /* HEADER MÁS COMPACTO */
+    .admin_header {
+        padding: 10px;
+    }
+
+    .admin_header h1 {
+        font-size: 16px;
+    }
+
+    .btn_salir {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* CONTENIDO */
+    .admin_contenido {
+        padding: 10px;
+    }
+}

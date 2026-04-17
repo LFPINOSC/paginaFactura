@@ -1,0 +1,85 @@
+<div class="ciudad-contenedor">
+  <div class="card-formulario">
+    <h2>{{ editando ? 'Editar ciudad' : 'Registrar ciudad' }}</h2>
+
+    <form [formGroup]="ciudadForm" (ngSubmit)="guardarCiudad()">
+      <div class="grupo-formulario">
+        <label for="nombre">Nombre de la ciudad</label>
+        <input
+          id="nombre"
+          type="text"
+          formControlName="nombre"
+          placeholder="Ingrese el nombre de la ciudad"
+        />
+
+        <small class="error-validacion" *ngIf="nombre?.touched && nombre?.invalid">
+          <span *ngIf="nombre?.errors?.['required']">El nombre es obligatorio.</span>
+          <span *ngIf="nombre?.errors?.['minlength']">
+            El nombre debe tener al menos 3 caracteres.
+          </span>
+        </small>
+      </div>
+
+      <div class="botones-formulario">
+        <button type="submit" class="btn-guardar">
+          {{ editando ? 'Actualizar' : 'Guardar' }}
+        </button>
+
+        <button
+          type="button"
+          class="btn-cancelar"
+          *ngIf="editando"
+          (click)="cancelarEdicion()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+
+    <div class="mensaje exito" *ngIf="mensaje">
+      {{ mensaje }}
+    </div>
+
+    <div class="mensaje error" *ngIf="error">
+      {{ error }}
+    </div>
+  </div>
+
+  <div class="card-tabla">
+    <h2>Listado de ciudades</h2>
+
+    <div *ngIf="cargando" class="estado">
+      Cargando ciudades...
+    </div>
+
+    <div *ngIf="!cargando && ciudades.length === 0" class="estado">
+      No existen ciudades registradas.
+    </div>
+
+    <div class="tabla-responsive" *ngIf="!cargando && ciudades.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th class="acciones-columna">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ciudad of ciudades">
+            <td>{{ ciudad.id }}</td>
+            <td>{{ ciudad.nombre }}</td>
+            <td class="acciones">
+              <button class="btn-editar" (click)="editarCiudad(ciudad)">
+                Editar
+              </button>
+              <button class="btn-eliminar" (click)="eliminarCiudad(ciudad)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

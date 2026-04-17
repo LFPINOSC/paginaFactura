@@ -1,4 +1,4 @@
 interface Ciudad {
-    id:number;
+    id?:number;
     nombre:string;
 }

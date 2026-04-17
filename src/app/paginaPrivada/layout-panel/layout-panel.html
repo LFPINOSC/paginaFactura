@@ -1,0 +1,28 @@
+<div class="admin_layout">
+    <aside class="admin_shide">
+        <div class="logo_admin">
+            <h1>Panel admin</h1>
+            <p>Gentión de sistema</p>
+        </div>
+        <nav class="menu_admin">
+            <a routerLink="admin" routerLinkActive="active">
+                Inicio
+            </a>
+            <a routerLink="ciudad" routerLinkActive="active">
+                Ciudades
+            </a>
+            <a routerLink="cliente" routerLinkActive="active">
+                Clientes
+            </a>
+        </nav>
+    </aside>
+    <main class="admin_main">
+        <header class="admin_header">
+            <h1>Administrador</h1>
+            <button class="btn_salir" routerLink="/login">Salir</button>
+        </header>
+        <section class="admin_contenido">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>
